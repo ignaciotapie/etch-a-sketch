@@ -1,22 +1,21 @@
-let isMouseClickDown = false;
+let mouseClickDown = false;
 const etchContainer = document.querySelector(".etch-container");
 const numberOfBoxes = 16;
 
 document.body.onmousedown = () => {
-    isMouseClickDown = true;
+    mouseClickDown = true;
 }
 document.body.onmouseup = () => {
-    isMouseClickDown = false;
+    mouseClickDown = false;
 }
 
 let button = document.querySelector("button");
 createGrid(numberOfBoxes);
 
-
 function onHover(e, box)
 {
     box.classList.toggle("etch-box-hovered");
-    if (isMouseClickDown)
+    if (mouseClickDown)
     {
         box.style.backgroundColor = "black";
     }
@@ -25,7 +24,7 @@ function onHover(e, box)
 function onUnhover(e,box)
 {
     box.classList.toggle("etch-box-hovered");
-    if (isMouseClickDown)
+    if (mouseClickDown)
     {
         box.style.backgroundColor = "black";
     }
@@ -34,7 +33,7 @@ function onUnhover(e,box)
 function onButtonClick()
 {
     let response = parseInt(prompt("Write a grid size", "16"));
-    if (response != NaN)
+    if (response != undefined)
     {
         createGrid(response);
     }
@@ -60,8 +59,8 @@ function appendBoxes(div, numberOfBoxes)
     for(let i = 0; i<numBoxes; i++)
     {
         let box = document.createElement("div");
-        box.classList.add("etch-box");
         box.draggable = false;
+        box.classList.add("etch-box");
         div.appendChild(box);
         box.addEventListener("mouseover", (e) => onHover(e,box));
         box.addEventListener("mouseleave", (e) => onUnhover(e,box));
