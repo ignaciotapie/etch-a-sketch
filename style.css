@@ -1,0 +1,52 @@
+body {
+    background-color: grey;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+
+.etch-container{
+    display:flex;
+    justify-content: center;
+    height: 32rem;
+    width: 32rem;
+    flex: 0 1 auto;
+}
+
+.etch-column
+{
+    display:flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: white;
+}
+
+.etch-box
+{
+    display:flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    background-color: white;
+    transition: background-color 0.5s;
+    cursor: crosshair;
+    user-select: none;
+}
+
+.etch-box-hovered{
+    background-color: grey;
+    transition: background-color 0s;
+}
+
+h1 {
+    text-align: center;
+}
+
+.content{
+    display:flex;
+    flex-direction: column;
+    flex:1;
+}
